@@ -1,0 +1,14 @@
+eksctl create cluster \
+--name testing \
+--version 1.14 \
+--region us-east-2 \
+--vpc-cidr 10.0.0.0/16 \
+--vpc-nat-mode HighlyAvailable \
+--nodegroup-name standard-workers \
+--node-type t3.micro \
+--nodes 2 \
+--nodes-min 2 \
+--nodes-max 4 \
+--ssh-access \
+--ssh-public-key ~/.ssh/eks.key.pub \
+--managed
